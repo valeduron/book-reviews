@@ -43,7 +43,7 @@ function loader(){
 }
 
 function fadeOut(){
-  setTimeout(loader, 4000);
+  setTimeout(loader, 2000);
 }
 
 var swiper = new Swiper(".books-slider", {
@@ -136,7 +136,23 @@ var swiper = new Swiper(".reviews-slider", {
     },
   },
 });
+function validate() {
+	var $valid = true;
+	document.getElementById("user_info").innerHTML = "";
+	document.getElementById("password_info").innerHTML = "";
 
+	var userName = document.getElementById("user_name").value;
+	var password = document.getElementById("password").value;
+	if (userName == "") {
+		document.getElementById("user_info").innerHTML = "required";
+		$valid = false;
+	}
+	if (password == "") {
+		document.getElementById("password_info").innerHTML = "required";
+		$valid = false;
+	}
+	return $valid;
+}
 var swiper = new Swiper(".blogs-slider", {
   spaceBetween: 10,
   grabCursor:true,

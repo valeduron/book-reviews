@@ -1,0 +1,58 @@
+CREATE TABLE `bookstoredb`.`dbo.User` (
+`UserID` int auto_increment, 
+`Username` VARCHAR(16) NOT NULL,
+`LastName` varchar(50) not null,
+`FirstName` varchar(50) not null,
+`Email` VARCHAR(255) NOT NULL unique,
+`Password` VARCHAR(32) NOT NULL,
+`Address` varchar(100),
+    `City` varchar(50),
+    `ZipCode` int,
+`BookshelfID` int,
+`CreateTime` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+primary key (UserID)
+);
+
+
+
+Insert into `db.bookstore`.`dbo.user` ( 
+`Username`,
+`LastName` ,
+`FirstName`,
+`Email` ,
+`Password`) Values('iamjuant','Trujillo','Juan','jtrujillotarelo@gmail.com','jajaja123') 
+
+
+select * FROM `bookstoredb`.`dbo.user` WHERE Email = ? AND Password = ?
+
+DELETE FROM `db.bookstore`.user  WHERE UserID = 'NULL'
+
+
+CREATE TABLE `bookstoredb`.`dbo.Reviews` (
+`ReviewId` int auto_increment, 
+`Score` int,
+`Details` varchar(300),
+`UserId` int,
+`BookshelfId` int,
+`CreateTime` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+primary key (ReviewId)
+);
+
+
+CREATE TABLE `bookstoredb`.`dbo.Books` (
+`BookId` int auto_increment, 
+`Title` varchar(50),
+`Author` varchar(50),
+`Genre` varchar(50),
+`CreateTime` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+primary key (BookId)
+);
+
+
+CREATE TABLE `bookstoredb`.`dbo.P_W` (
+`P_WID` int auto_increment, 
+`UserId` int,
+primary key (P_WID)
+);
+
+DROP TABLE `bookstoredb`.`dbo.p_w`;
