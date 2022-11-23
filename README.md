@@ -83,7 +83,8 @@ This is an example of how to list things you need to use the software and how to
   install mysql workbech
   ```
 * git 
-  ```install git
+  ```
+  install git
   ```
 ### Installation
 
