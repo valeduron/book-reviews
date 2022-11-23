@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://raw.githubusercontent.com/valeduron/book-reviews/main/image/loader-img.gif">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="image/loader-img.gif" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Bookstore</h3>
