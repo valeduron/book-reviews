@@ -46,17 +46,17 @@ class Models
         return $memberResult;
     }
 
-    function addBook($uname,$lname,$fname,$email,$pw)
+    function addBook($lname,$fname,$email)
     {
-        $query = "Insert into `bookstoredb`.`dbo.book` ( 
-            `BookId`,
+        $query = "Insert into `bookstoredb`.`dbo.books` ( 
+            
             `Title` ,
             `Author`,
-            `Genre`,CreateTime) Values(?????) 
+            `Genre`) Values(?,?,?) 
             ";
-        $paramType = "isssi";
+        $paramType = "sss";
         $paramArray = array(
-            $uname,$lname,$fname,$email,$pw
+            $lname,$fname,$email
         );
         $memberResult = $this->ds->insert($query, $paramType, $paramArray);
 

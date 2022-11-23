@@ -58,6 +58,7 @@ if (! empty($_SESSION["UserID"])) {
                     <div id="search-btn" class="fas fa-search"></div>
                     <a href="#" class="fas fa-heart"></a>
                     <a href="#" class="fas fa-shopping-cart"></a>
+
                     <div id="login-btn" class="fas fa-user"></div>
                 </div>
                 
@@ -66,8 +67,13 @@ if (! empty($_SESSION["UserID"])) {
             <div class="header-2">
                 <nav class="navbar">
                     <a href="index.php">Home</a>
-                    <a href="books.html">Books</a>
-                    <a href="bookshelf.html">My Bookshelf</a>
+                    <a href="books.php">Books</a>
+                    <?php error_reporting(E_ALL ^ E_WARNING);
+                            if(!empty($_SESSION["FirstName"])){
+
+                                echo "<a href='bookshelf.php'>My Bookshelf</a>";
+                            }
+                    ?>
                     <a href="logout.php">Logout</a>
                     <h1>
                         <?php error_reporting(E_ALL ^ E_WARNING);
