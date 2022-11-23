@@ -72,19 +72,19 @@ To get a local copy up and running follow these simple example steps.
 This is an example of how to list things you need to use the software and how to install them.
 * php
   ```
-  install php from the php page in your local computer
+  install php from (https://www.php.net/downloads)
   ```
 * php server
   ```
-  install any php server
+  install any php server 
   ```
 * mysql workbench
   ```
-  install mysql workbech
+  install mysql workbech (https://dev.mysql.com/downloads/workbench/)
   ```
 * git 
   ```
-  install git
+  install git (https://git-scm.com/downloads)
   ```
 ### Installation
 
