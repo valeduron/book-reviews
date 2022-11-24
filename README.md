@@ -10,10 +10,10 @@
     <img src="image/loader-img.gif" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Bookstore</h3>
+  <h3 align="center">Bookworms</h3>
 
   <p align="center">
-    Readme for the Bookstore website!
+    Readme for the Bookworms website!
   </p>
 </div>
 
