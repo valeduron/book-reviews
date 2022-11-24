@@ -44,7 +44,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This bookstore application is a group project for the class Software Construction at UTEP.
+This bookstore application is a group project for the class Software Construction at UTEP. The goal was to create a primary choice for a book enthusiast. Features include: Login System, Create an account, Write reviews and rate books, Browse other account reviews.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
