@@ -21,7 +21,7 @@ if (! empty($_SESSION["UserID"])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Complete Responsive Online Boot Store Website Design Tutorial</title>
+        <title>Bookworms</title>
         
         <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
         
@@ -47,7 +47,7 @@ if (! empty($_SESSION["UserID"])) {
             
             <div class="header-1">
                 
-                <a href="#" class="logo"> <i class="fas fa-book"></i> bookly </a>
+                <a href="#" class="logo"> <i class="fas fa-book"></i> Bookworms </a>
                 
                 <form action="" class="search-form">
                     <input type="search" name="" placeholder="search here..." id="search-box">
@@ -374,7 +374,7 @@ if (! empty($_SESSION["UserID"])) {
         <a href="#" class="fab fa-instagram"></a>
     </div>
 
-    <div class="credit"> created by <span>mr. web designer</span> | all rights reserved! </div>
+    <div class="credit"> created by <span>Team 11</span> | all rights reserved! </div>
 
 </section>
 
