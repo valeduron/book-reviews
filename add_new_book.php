@@ -54,7 +54,7 @@
     if (count($_POST) > 0) {
         require_once __DIR__ . '\config.php';
         $database = new DataSource();
-        $sql = "INSERT INTO dbo.books (BookId,Title,Author, Genre) VALUES (?,?,?,?)";
+        $sql = "INSERT INTO bookstoredb.`dbo.books` (BookId,Title,Author, Genre) VALUES (?,?,?,?)";
         $paramType = 'ssss';
         $paramValue = array(
             $_POST["BookId"],
