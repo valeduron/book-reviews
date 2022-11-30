@@ -146,7 +146,7 @@ if (! empty($_SESSION["UserID"])) {
                 </div>
                 <div class="content">
                     <h3>Fantasy</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
