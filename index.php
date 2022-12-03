@@ -35,11 +35,8 @@ if (! empty($_SESSION["UserID"])) {
     <body>
 <?php
 session_start();
-if (! empty($_SESSION["UserID"])) {
-    require_once './index.php';
-} else {
-    require_once './index.php';
-}
+require_once './index.php';
+
 ?>
         <!-- header section starts  -->
         
