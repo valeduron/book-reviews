@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
 
+    
+
+    
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,11 +11,71 @@
 
     <!-- Importing Bootstrap CSS library https://getbootstrap.com/ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    
+    
+        <!-- header section starts  -->
+
+<header class="header">
+    
+
+    <div class="header-1">
+
+        <a href="#" class="logo"> <i class="fas fa-book"></i> Bookworms </a>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="Search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="index.php">Home</a>
+            <?php error_reporting(E_ALL ^ E_WARNING);
+            if(!empty($_SESSION["FirstName"])){
+
+                echo "<a href='bookshelf.php'>My Bookshelf</a>";
+                echo "<a href='logout.php'>Logout</a>";
+            }
+    ?>
+    <h1>
+        <?php error_reporting(E_ALL ^ E_WARNING);
+            if(!empty($_SESSION["FirstName"])){
+
+                echo "Hello ".$_SESSION["FirstName"];
+            }
+    ?></h1>
+        </nav>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+    
+   <!-- <h1 class="heading"> <span>Add Book</span> </h1> -->
+    
+    
     <div style="margin-top: 20px" class="container">
-        <h1>Add Book</h1>
+        <h2>Add Book</h2>
         <!-- styling of the form for bootstrap https://getbootstrap.com/docs/4.5/components/forms/ -->
         <form action="add_new_book.php" method="post">
         <div class="form-group">
