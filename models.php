@@ -45,6 +45,20 @@ class Models
 
         return $memberResult;
     }
+    function addBookshelf($uname,$lname,$fname,$email,$pw)
+    {
+        $query = "
+        Insert into `bookstoredb`.`dbo.bookshelf` ( 
+        `BookshelfId`,
+        `UserId`) Values(?,?) ";
+        $paramType = "si";
+        $paramArray = array(
+            $uname,$lname,$fname,$email,$pw
+        );
+        $memberResult = $this->ds->insert($query, $paramType, $paramArray);
+
+        return $memberResult;
+    }
 
     function addBook($lname,$fname,$email)
     {
@@ -62,7 +76,19 @@ class Models
 
         return $memberResult;
     }
+    function viewBooks($email){
+        $query = "SELECT bs.BookId ISBN, Title, book.Author, book.Genre FROM bookstoredb.`dbo.bookshelf` bs
+        join bookstoredb.`dbo.books` book on bs.BookId = book.BookId
+        join bookstoredb.`dbo.user` Users on bs.BookshelfId = users.BookshelfId where 
+        users.Email= ?";
+        $paramType = "s";
+        $paramArray = array(
+            $email
+        );
+        $memberResult = $this->ds->select($query, $paramType, $paramArray);
 
+        return $memberResult;
+    }
     function deleteUserById($memberId)
     {
         $query = "delete FROM `bookstoredb`.`dbo.user` WHERE UserID = ?";
@@ -171,12 +197,13 @@ class Models
         return $memberResult;
     }
 
-    function deleteBookshelfById($memberId)
+    function deleteBookshelfByIds($userId,$BookId)
     {
-        $query = "delete FROM `bookstoredb`.`dbo.bookshelf` WHERE BookshelfID = ?";
-        $paramType = "i";
+        $query = "delete FROM `bookstoredb`.`dbo.bookshelf` WHERE UserId =? AND BookId = ? LIMIT 1";
+        $paramType = "ii";
         $paramArray = array(
-            $memberId
+            $userId,
+            $BookId
         );
         $memberResult = $this->ds->select($query, $paramType, $paramArray);
 
@@ -185,7 +212,7 @@ class Models
 
     function getBookshelfByUserID($memberId)
     {
-        $query = "select * FROM `bookstoredb`.`dbo.bookshelf` WHERE UserID = ?";
+        $query = "select * FROM `bookstoredb`.`dbo.bookshelf` WHERE UserId = ?";
         $paramType = "i";
         $paramArray = array(
             $memberId
@@ -197,7 +224,7 @@ class Models
 
     function deleteBookshelfByUserID($memberId)
     {
-        $query = "Delete from `bookstoredb`.`dbo.bookshelf` WHERE UserID = ?";
+        $query = "Delete from `bookstoredb`.`dbo.bookshelf` WHERE UserId = ?";
         $paramType = "i";
         $paramArray = array(
             $memberId

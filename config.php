@@ -14,7 +14,7 @@ class DataSource{
 
     const USERNAME = 'root';
 
-    const PASSWORD = '';
+    const PASSWORD = 'ElpasoUTEP123..';
     //'ElpasoUTEP123..'
 
     const DATABASENAME = 'bookstoredb';

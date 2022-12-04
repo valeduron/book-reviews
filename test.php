@@ -4,6 +4,11 @@ use Phppot\Models;
 
 require __DIR__ .'/models.php';
 $models = new Models();
+
+$modelsResult = $models->viewBooks('jtrujillotarelo@gmail.com');
+print_r($modelsResult);
+
+
 // $modelsResult = $models->deleteUserById(1);
 // print_r($modelsResult);
 

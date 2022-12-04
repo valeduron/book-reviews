@@ -55,6 +55,8 @@
                             }
                     ?>
                     <a href="logout.php">Logout</a>
+                    <a href='add_new_book.php'>Add Books</a>
+                    <a href='viewMyBooks.php'>View My Books</a>
                     <h1>
                         <?php error_reporting(E_ALL ^ E_WARNING);
                             if(!empty($_SESSION["FirstName"])){
