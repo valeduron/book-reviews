@@ -13,7 +13,7 @@ if (! empty($_SESSION["UserID"])) {
         $displayName = ucwords($modelsResult[0]["Email"]);
     } else {
         error_reporting(E_ALL ^ E_WARNING);
-        $displayName = $modelsResult[0]["Email"];
+        //$displayName = $modelsResult[0]["Email"];
         
     }
 }
@@ -61,13 +61,14 @@ if (! empty($_SESSION["UserID"])) {
     </div>
 
     <div class="header-2">
-        <nav class="navbar">
+        <nav class="navbar" label="arial">
             <a href="index.php">Home</a>
             <a href="books.php">Books</a>
             <?php error_reporting(E_ALL ^ E_WARNING);
             if(!empty($_SESSION["FirstName"])){
 
-                echo "<a href='bookshelf.php'>My Bookshelf</a>";
+                echo "<a href='viewMyBooks.php'>My Bookshelf</a>";
+                echo "<a href='add_new_book.php'>Add Book</a>";
                 echo "<a href='logout.php'>Logout</a>";
             }
     ?>
@@ -87,7 +88,7 @@ if (! empty($_SESSION["UserID"])) {
 
 <!-- bottom navbar  -->
 
-<nav class="bottom-navbar">
+<nav class="bottom-navbar" label="arial">
     <a href="index.html" class="fas fa-home"></a>
     <a href="books.html" class="fas fa-book"></a>
     <a href="bookshelf.html" class="fas fa-blog"></a>
@@ -161,7 +162,7 @@ if (! empty($_SESSION["UserID"])) {
                 </div>
                 <div class="content">
                     <h3>Action</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -176,7 +177,7 @@ if (! empty($_SESSION["UserID"])) {
                 </div>
                 <div class="content">
                     <h3>Action</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -191,7 +192,7 @@ if (! empty($_SESSION["UserID"])) {
                 </div>
                 <div class="content">
                     <h3>Classics</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -206,7 +207,7 @@ if (! empty($_SESSION["UserID"])) {
                 </div>
                 <div class="content">
                     <h3>Crime</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -221,7 +222,7 @@ if (! empty($_SESSION["UserID"])) {
                 </div>
                 <div class="content">
                     <h3>Classics</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -236,7 +237,7 @@ if (! empty($_SESSION["UserID"])) {
                 </div>
                 <div class="content">
                     <h3>Adventure</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -251,7 +252,7 @@ if (! empty($_SESSION["UserID"])) {
                 </div>
                 <div class="content">
                     <h3>Romance</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -266,7 +267,7 @@ if (! empty($_SESSION["UserID"])) {
                 </div>
                 <div class="content">
                     <h3>Mystery</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -281,7 +282,7 @@ if (! empty($_SESSION["UserID"])) {
                 </div>
                 <div class="content">
                     <h3>Adventure</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 

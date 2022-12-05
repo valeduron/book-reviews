@@ -20,6 +20,8 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
+    
+    
 </head>
 
 <body>
@@ -50,27 +52,19 @@
     </div>
 
     <div class="header-2">
-        <nav class="navbar">
-            <a href="index.php">Home</a>
-            <a href="books.php">Books</a>
-            <?php error_reporting(E_ALL ^ E_WARNING);
+                <nav class="navbar">
+                    <a href="index.php">Home</a>
+                    <a href="books.php">Books</a>
+                    <?php error_reporting(E_ALL ^ E_WARNING);
                             if(!empty($_SESSION["FirstName"])){
-
-                                echo "<a href='bookshelf.html'>My Bookshelf</a>";
+                                echo "<a href='viewMyBooks.php'>My Bookshelf</a>";
+                                echo "<a href='add_new_book.php'>Add Book</a>";
                             }
                     ?>
                     <a href="logout.php">Logout</a>
-                    <a href='add_new_book.php'>Add Books</a>
-                    <a href='viewMyBooks.php'>View My Books</a>
-                    <h1>
-                        <?php error_reporting(E_ALL ^ E_WARNING);
-                            if(!empty($_SESSION["FirstName"])){
-
-                                echo "Hello ".$_SESSION["FirstName"];
-                            }
-                    ?></h1>
-        </nav>
-    </div>
+                   
+                </nav>
+            </div>
 
 </header>
 

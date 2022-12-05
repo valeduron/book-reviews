@@ -5,9 +5,6 @@ use Phppot\DataSource;
 
 class Models
 {
-
-    private $dbConn;
-
     private $ds;
 
     function __construct()
@@ -16,7 +13,7 @@ class Models
         $this->ds = new DataSource();
     }
 
-    function getUserById($memberId)
+    public function getUserById($memberId)
     {
         $query = "select * FROM `bookstoredb`.`dbo.user` WHERE UserID = ?";
         $paramType = "i";
@@ -28,7 +25,7 @@ class Models
         return $memberResult;
     }
 
-    function addUser($uname,$lname,$fname,$email,$pw)
+    public function addUser($uname,$lname,$fname,$email,$pw)
     {
         $query = "
         Insert into `bookstoredb`.`dbo.user` ( 
@@ -45,7 +42,7 @@ class Models
 
         return $memberResult;
     }
-    function addBookshelf($uname,$lname,$fname,$email,$pw)
+    public function addBookshelf($uname,$lname,$fname,$email,$pw)
     {
         $query = "
         Insert into `bookstoredb`.`dbo.bookshelf` ( 
@@ -60,7 +57,7 @@ class Models
         return $memberResult;
     }
 
-    function addBook($lname,$fname,$email)
+    public function addBook($lname,$fname,$email)
     {
         $query = "Insert into `bookstoredb`.`dbo.books` ( 
             
@@ -76,8 +73,8 @@ class Models
 
         return $memberResult;
     }
-    function viewBooks($email){
-        $query = "SELECT bs.BookId ISBN, Title, book.Author, book.Genre FROM bookstoredb.`dbo.bookshelf` bs
+    public function viewBooks($email){
+        $query = "SELECT bs.BookId ID, Title, book.Author, book.Genre FROM bookstoredb.`dbo.bookshelf` bs
         join bookstoredb.`dbo.books` book on bs.BookId = book.BookId
         join bookstoredb.`dbo.user` Users on bs.BookshelfId = users.BookshelfId where 
         users.Email= ?";
@@ -89,7 +86,7 @@ class Models
 
         return $memberResult;
     }
-    function deleteUserById($memberId)
+    public function deleteUserById($memberId)
     {
         $query = "delete FROM `bookstoredb`.`dbo.user` WHERE UserID = ?";
         $paramType = "i";
@@ -101,7 +98,7 @@ class Models
         return $memberResult;
     }
 
-    function getUserByEmail($memberId)
+    public function getUserByEmail($memberId)
     {
         $query = "select * FROM `bookstoredb`.`dbo.user` WHERE Email = ?";
         $paramType = "s";
@@ -113,7 +110,7 @@ class Models
         return $memberResult;
     }
 
-    function deleteUserByEmail($memberId)
+    public function deleteUserByEmail($memberId)
     {
         $query = "delete FROM `bookstoredb`.`dbo.user` WHERE Email = ?";
         $paramType = "s";
@@ -125,7 +122,7 @@ class Models
         return $memberResult;
     }
     
-    function getBookById($memberId)
+    public function getBookById($memberId)
     {
         $query = "select * FROM `bookstoredb`.`dbo.book` WHERE BookID = ?";
         $paramType = "i";
@@ -137,7 +134,7 @@ class Models
         return $memberResult;
     }
     
-    function deleteBookById($memberId)
+    public function deleteBookById($memberId)
     {
         $query = "delete FROM `bookstoredb`.`dbo.book` WHERE BookID = ?";
         $paramType = "i";
@@ -149,7 +146,7 @@ class Models
         return $memberResult;
     }
     
-    function getBookByTitle($memberId)
+    public function getBookByTitle($memberId)
     {
         $query = "select * FROM `bookstoredb`.`dbo.book` WHERE Title = ?";
         $paramType = "s";
@@ -161,7 +158,7 @@ class Models
         return $memberResult;
     }
     
-    function deleteBookByTitle($memberId)
+    public function deleteBookByTitle($memberId)
     {
         $query = "delete FROM `bookstoredb`.`dbo.book` WHERE Title = ?";
         $paramType = "s";
@@ -173,7 +170,7 @@ class Models
         return $memberResult;
     }
 
-    function getBooksByGenre($memberId)
+    public function getBooksByGenre($memberId)
     {
         $query = "select * FROM `bookstoredb`.`dbo.book` WHERE Genre = ?";
         $paramType = "s";
@@ -185,7 +182,7 @@ class Models
         return $memberResult;
     }
 
-    function getBookshelfById($memberId)
+    public function getBookshelfById($memberId)
     {
         $query = "select * FROM `bookstoredb`.`dbo.bookshelf` WHERE BookshelfID = ?";
         $paramType = "i";
@@ -197,7 +194,7 @@ class Models
         return $memberResult;
     }
 
-    function deleteBookshelfByIds($userId,$BookId)
+    public function deleteBookshelfByIds($userId,$BookId)
     {
         $query = "delete FROM `bookstoredb`.`dbo.bookshelf` WHERE UserId =? AND BookId = ? LIMIT 1";
         $paramType = "ii";
@@ -210,7 +207,7 @@ class Models
         return $memberResult;
     }
 
-    function getBookshelfByUserID($memberId)
+    public function getBookshelfByUserID($memberId)
     {
         $query = "select * FROM `bookstoredb`.`dbo.bookshelf` WHERE UserId = ?";
         $paramType = "i";
@@ -222,7 +219,7 @@ class Models
         return $memberResult;
     }
 
-    function deleteBookshelfByUserID($memberId)
+    public function deleteBookshelfByUserID($memberId)
     {
         $query = "Delete from `bookstoredb`.`dbo.bookshelf` WHERE UserId = ?";
         $paramType = "i";
@@ -236,7 +233,6 @@ class Models
 
     public function processLogin($username, $password)
     {
-        // $passwordHash = md5($password);
         $passwordHash=$password;
         $query = "select * FROM `bookstoredb`.`dbo.user` WHERE Email = ? AND Password = ?";
         $paramType = "ss";

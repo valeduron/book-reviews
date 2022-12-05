@@ -9,11 +9,11 @@ if (! empty($_SESSION["UserID"])) {
     $displayName="";
     $modelsResult = $models->getUserByEmail($_SESSION["UserID"]);
     if (! empty($modelsResult[0]["UserID"])) {
-        error_reporting(E_ALL ^ E_WARNING);
+        //error_reporting(E_ALL ^ E_WARNING);
         $displayName = ucwords($modelsResult[0]["Email"]);
     } else {
         error_reporting(E_ALL ^ E_WARNING);
-        $displayName = $modelsResult[0]["Email"];
+        //$displayName = $modelsResult[0]["Email"];
         
     }
 }
@@ -37,6 +37,30 @@ if (! empty($_SESSION["UserID"])) {
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+    #books {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #books td, #books th {
+      border: 1px solid #ddd;
+      padding: 15px;
+    }
+
+    #books tr:nth-child(even){background-color: #f2f2f2;}
+
+    #books tr:hover {background-color: #ddd;}
+
+    #books th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      color: white;
+    }
+    </style>
 </head>
 
 <body>
@@ -67,22 +91,16 @@ if (! empty($_SESSION["UserID"])) {
 
     <div class="header-2">
         <nav class="navbar">
-            <a href="bookshelf.php">Home</a>
-            <?php error_reporting(E_ALL ^ E_WARNING);
+            <a href="index.php">Home</a>
+            <?//php error_reporting(E_ALL ^ E_WARNING);
             if(!empty($_SESSION["FirstName"])){
-
-                echo "<a href='bookshelf.php'>My Bookshelf</a>";
-                echo "<a href='logout.php'>Logout</a>";
+                echo "<a href='books.php'>Books</a>";
+                echo "<a href='viewMyBooks.php'>My Bookshelf</a>";
                 echo "<a href='add_new_book.php'>Add Books</a>";
+                echo "<a href='logout.php'>Logout</a>";
             }
     ?>
-    <h1>
-        <?php error_reporting(E_ALL ^ E_WARNING);
-            if(!empty($_SESSION["FirstName"])){
-
-                echo "Hello ".$_SESSION["FirstName"];
-            }
-    ?></h1>
+    
         </nav>
     </div>
 
@@ -90,18 +108,19 @@ if (! empty($_SESSION["UserID"])) {
 
 <!-- header section ends -->
     
-
+<h1>Book List</h1>
 
  <div class="container-fluid">
        <div class="row justify-content-center my-5">
            <div class="col-10">
-            <table class="table table-bordered">
+            <table id="books">
               <thead class="thead">
                 <tr>
-                    <th scope="col">ISBN</th>
-                  <th scope="col">Title </th>
-                  <th scope="col">Author</th>
-                  <th scope="col">Date</th>
+                  <th bgcolor='#27ae60', scope="col">ID</th> 
+                  <th bgcolor='#27ae60', scope="col">Title </th>
+                  <th bgcolor='#27ae60', scope="col">Author</th>
+                  <th bgcolor='#27ae60', scope="col">Genre</th>
+                  <th bgcolor='#27ae60', scope="col"></th>
                 </tr>
               </thead>
         <tbody>      
@@ -111,17 +130,17 @@ if (! empty($_SESSION["UserID"])) {
  
  $modelsResult = $models->viewBooks($user_email);
  $userID=$_SESSION['UserID'];
- echo "<H1>Book List</H!>";
- 
+ $disp = "";
  foreach ($modelsResult as $tr) 
  {
+    
     $disp .= '<tr>';
     foreach ($tr as $td)
         {
             $disp .= '<td>' . $td . '</td>';
         }
         // deleteBookshelfById($userID,$tr[ISBN])
-    $disp .='<td><a  href="" value="'.$tr['ISBN'].'">Delete</a></td>"';
+    $disp .='<td><a  href="" value="'.$tr['ID'].'">Delete</a></td>"';
     $disp .= '</tr>';
  }
  echo $disp;

@@ -3,7 +3,7 @@ namespace Phppot;
 
 use Phppot\Models;
 if (! empty($_SESSION["UserID"])) {
-    require __DIR__ .'/models.php';
+    require_once __DIR__ .'/models.php';
     $models = new Models();
     $displayName="";
     $modelsResult = $models->getUserByEmail($_SESSION["UserID"]);
@@ -67,8 +67,8 @@ require_once './index.php';
                     <a href="books.php">Books</a>
                     <?php error_reporting(E_ALL ^ E_WARNING);
                             if(!empty($_SESSION["FirstName"])){
-
-                                echo "<a href='bookshelf.php'>My Bookshelf</a>";
+                                echo "<a href='viewMyBooks.php'>My Bookshelf</a>";
+                                echo "<a href='add_new_book.php'>Add Book</a>";
                             }
                     ?>
                     <a href="logout.php">Logout</a>
@@ -132,7 +132,7 @@ require_once './index.php';
 
         <div class="content">
             <h3>Start your own bookshelf now!</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus. Nam alias sit necessitatibus, aliquid ex minima at!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus.</p>
             <a href="books.html" class="btn">Start adding!</a>
         </div>
 
@@ -175,7 +175,7 @@ require_once './index.php';
                 </div>
                 <div class="content">
                     <h3>Fantasy</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -190,7 +190,7 @@ require_once './index.php';
                 </div>
                 <div class="content">
                     <h3>Action</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -205,7 +205,7 @@ require_once './index.php';
                 </div>
                 <div class="content">
                     <h3>Action</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -220,7 +220,7 @@ require_once './index.php';
                 </div>
                 <div class="content">
                     <h3>Classics</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -235,7 +235,7 @@ require_once './index.php';
                 </div>
                 <div class="content">
                     <h3>Crime</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -250,7 +250,7 @@ require_once './index.php';
                 </div>
                 <div class="content">
                     <h3>Classics</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -265,7 +265,7 @@ require_once './index.php';
                 </div>
                 <div class="content">
                     <h3>Adventure</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -280,7 +280,7 @@ require_once './index.php';
                 </div>
                 <div class="content">
                     <h3>Romance</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -295,7 +295,7 @@ require_once './index.php';
                 </div>
                 <div class="content">
                     <h3>Mystery</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -310,7 +310,7 @@ require_once './index.php';
                 </div>
                 <div class="content">
                     <h3>Adventure</h3>
-                    <a href="#" class="btn">Add to bookshelf</a>
+                    <a href="add_new_book.php" class="btn">Add to bookshelf</a>
                 </div>
             </div>
 
@@ -331,7 +331,7 @@ require_once './index.php';
 
     <div class="content">
         <h1>Who we are</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde perspiciatis in atque dolore tempora quaerat at fuga dolorum natus velit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde perspiciatis.</p>
         <a href="books.html" class="btn">Start adding now!</a>
     </div>
 
